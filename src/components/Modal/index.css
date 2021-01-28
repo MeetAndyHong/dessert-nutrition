@@ -1,0 +1,15 @@
+.modal-popup, .modal-popup-layer {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.modal-popup-close {
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    cursor: pointer;
+}

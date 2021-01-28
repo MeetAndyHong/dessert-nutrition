@@ -1,0 +1,13 @@
+.sort-arrows {
+    margin-left: 5px;
+}
+.sort-arrows .sort-arrow {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.sort-arrows .active-arrow {
+    opacity: 1;
+    cursor: default;
+    pointer-events: none;
+}

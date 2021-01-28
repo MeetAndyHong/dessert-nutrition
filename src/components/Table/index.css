@@ -1,0 +1,14 @@
+.thead {
+
+}
+.table-th, .table-td {
+    min-width: 18%;
+}
+.cell-dessert {
+    flex-grow: 1;
+}
+
+.cell-checkbox {
+    min-width: 50px;
+    flex-grow: unset;
+}
