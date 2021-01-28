@@ -1,27 +1,47 @@
-import React, { ReactNode } from 'react';
-import PropTypes from 'prop-types';
-import classList from './classList';
-import './index.css';
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
-interface ButtonPropTypes {
-  children: ReactNode,
-  type?: string,
-  className?: string,
-  disabled?: boolean,
-  onClick?: any,
+const baseClasses: { [key:string]: string} = {
+    primary: 'br2 pa3 outline-0 bn-l b flex items-center'
 };
 
-function Button({ type = 'primary', className = '', children, ...props }:ButtonPropTypes ) {
-  const cls = `${classList[type]} ${className}`;
-  return (
-    <button className={cls} {...props}>
-      {children}
-    </button>
-  );
-}
+interface ButtonType {
+  children: ReactNode,
+  className?: string,
+  disabled?: boolean,
+  icon?: string;
+  onClick?: any,
+  type?: string,
+};
 
-Button.propTypes = {
-  children: PropTypes.any,
-  type: PropTypes.string,
-}
+const ButtonStyle = styled.button`
+`;
+
+const Button: React.FC<ButtonType> = ({
+  children,
+  className='',
+  disabled,
+  icon,
+  type='primary',
+  ...props
+}) => {
+  const classFinal = `${baseClasses[type]} ${className} ${disabled ? 'o-50' : 'dim pointer'}`;
+
+  return(
+    <ButtonStyle
+      className={classFinal}
+      disabled={disabled}
+      { ...props }
+    >
+      {icon && <span
+        data-testid='icon'
+        className='material-icons'
+       >
+        {icon}
+      </span>}
+      {children}
+    </ButtonStyle>
+  );
+};
+
 export default Button;
