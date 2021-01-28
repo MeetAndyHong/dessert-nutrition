@@ -13,7 +13,7 @@ const initialState =  [
     protein: 4,
   },
   {
-    id: '1',
+    id: '2',
     name: 'Nougat',
     calories: 360,
     fat: 19,
